@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <titile id='02'>登录</titile><br>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <button id='b1' onclick="document.getElementById('01').style.display='block';myFunction();tip()" onmouseover="over()">登录</button>
+
+
+    <form>
+        <div id='01' class='modal'>
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('01').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+            </div>
+            <div class="container"></div>
+            First name: <input type='text' name='firstname'><br>
+            Last name: <input type='text' name='lastname'><br>
+        </div>
+    </form>
+
+<p id='demo'></p>
+<h1 id='tips'></h1>
+<h2 id='prompt'></h2>
+<h3 id='shuzu'></h3>
+    <script>
+        var modal = document.getElementById('01');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+        document.write('异常信息');
+        document.getElementById('02').innerHTML='已修改';
+        var date='<br>2020-07-22';
+        document.write(date);
+        function myFunction(){
+            var x='';
+            var time=new Date().getHours();
+            if(time<17)
+            x='see you';
+            else 
+            x='welcome'
+            document.getElementById('02').innerHTML=x;
+        }
+        var r=Math.random();
+        console.log(r);
+        if(r>0.5)
+        document.getElementById('demo').innerHTML='www.baidu.com';
+        else
+        document.getElementById('demo').innerHTML='noob.com';
+
+        var day;
+        day=new Date().getDay();
+        switch(day){
+            case 1:
+            document.getElementById('02').innerHTML='1';
+            case 2:
+            document.getElementById('02').innerHTML='2';
+            default:
+            document.getElementById('02').innerHTML='default';
+        }
+
+        function tip(){
+            alert('一行提示');
+            alert('换行\n做出提示');
+
+        }
+        
+        var x='';
+        var r=confirm('确认提交');
+        if(r==true)
+        x='你点击了确认';
+        else
+        x='你点击了取消';
+        document.getElementById('tips').innerHTML=x;
+
+
+        var s='';
+        var r=prompt('请输入内容','adc');
+        if(r!=null && r!='')
+        s=r+'<br>';
+        document.getElementById('prompt').innerHTML=s;
+
+        var s;
+        var person={fname:"Bill",lname:"Gates",age:56}; 
+        for (c in person){
+            s=s+person[c];
+        }
+        document.getElementById('shuzu').innerHTML=s;
+
+        function over(){
+            document.getElementById('b1').innerHTML='adc';
+        }
+
+        var c = 0;
+        var t;
+        var x=0;
+        var timer_is_on=0;
+        function num(){
+            document.getElementById('ber').value=c;
+            c = c+1;
+            if(!x)
+            t=setTimeout("num()",1000);
+        }
+        function doTimer(){
+            if(!timer_is_on){
+                timer_is_on=1;
+                num();
+            }
+
+        }
+        function stopTimer(){
+            x=1;
+        }
+
+        function clock(){
+            var s=new Date().getHours;
+            document.getElementById('clock').innerHTML=s;
+         }
+
+    </script>
+    <br>
+    <button id='num' onclick="doTimer()">计数</button>
+    <input type="number" id='ber'>
+    <button id='stop' onclick='stopTimer()'>停止计数</button><br>
+
+</body>
+
+</html>

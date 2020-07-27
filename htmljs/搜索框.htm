@@ -1,0 +1,82 @@
+<!doctype html>
+<html></html>
+<head>
+    <meta charset='utf-8'>
+    <title>搜索框自动提示</title>
+    <style>
+ #myInput {
+    background-image: url('https://static.runoob.com/images/mix/searchicon.png'); /* 搜索按钮 */
+    background-position: 10px 12px; /* 定位搜索按钮 */
+    background-repeat: no-repeat; /* 不重复图片*/
+    width: 100%; 
+    font-size: 16px; /* 加大字体 */
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd; 
+    margin-bottom: 12px; 
+}
+ 
+#myUL {
+    /* 移除默认的列表样式 */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ 
+#myUL li a {
+    border: 1px solid #ddd; /* 链接添加边框 */
+    margin-top: -1px; 
+    background-color: #f6f6f6; 
+    padding: 12px; 
+    text-decoration: none;
+    font-size: 18px; 
+    color: black; 
+    display: block; 
+}
+ 
+#myUL li a.header {
+    background-color: #e2e2e2; 
+    cursor: default; 
+}
+ 
+#myUL li a:hover:not(.header) {
+    background-color: #eee;
+}
+    </style>
+    <script>
+        function myFunction() {
+    // 声明变量
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+ 
+    // 循环所有列表，查找匹配项
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+    </script>
+</head>
+<body>
+    <input id='myInput' onkeyup='myFunction()' type='text' placeholder='搜索框提示'><br>
+    <ul id='myUL'>
+        <li><a href='123.com' class='header'>123</a></li>
+        <li><a href='456.com' >12345</a></li>
+        <li><a href='789.com'>12345678</a></li>
+
+        <li><a href='b12.com' class='header'>b12</a></li>
+        <li><a href='b1234.com'>b1234</a></li>
+        <li><a href='b12345678.com'>b12345678</a></li>
+
+        <li><a href='c12.com' class='header'>c12</a></li>
+        <li><a href='c1234.com'>c1234</a></li>
+        <li><a href='c12345678.com'>c12345678</a></li>        
+    </ul>
+</body>
+</html>
