@@ -4,26 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <title>div标签</title>
+    <link href='index.css' rel='stylesheet' type='text/css' />
+    <style type='text/css'>
+    header {
+        font-size:20px;
+        color:red;
+        font-weight:300;
+    }
+    span {
+        color:red;
+    }
+
+    </style>
 </head>
 
 <body>
     <header>first</header>
     <section>模块一</section>
-    <aside>侧边栏</aside>
+    <aside class='style1'>侧边栏</aside>
     <div>
-        <h2>热门课程排行榜</h2>
+        <h2 class='style1'>热门课程排行榜</h2>
         <ol>
-            <li>前端开发面试心法 </li>
-            <li>零基础学习html</li>
-            <li>javascript全攻略</li>
+            <li class='style1'>前端开发面试心法 </li>
+            <li class='style1'>零基础学习html</li>
+            <li class='style1'>javascript全攻略</li>
         </ol>
     </div>
     <hr/>
     <div>
         <h2>最新课程排行</h2>
         <ol>
-            <li>版本管理工具&nbsp介绍—Git篇 </li>
-            <li>Canvas绘图详解</li>
+            <li><span>版本管理工具&nbsp介绍—Git篇</span> </li>
+            <li id='li'>Canvas绘图详解</li>
             <hr/>
             <li>QQ5.0侧滑菜单</li>
         </ol>
@@ -40,9 +52,82 @@
         <section>有序列表</section>
         <ol>
             <li>第一行</li>
-            <li>第二行</li>
-            <li>第三行</li>
+            <li>第二行<br/><img src='source/img1.jpg' alt='获取不到图片' title='汽车车辆' width=200px height=200px></li>
+            <li><a href='https://www.baidu.com' title='百度一下' target='_blank '>第三行</a></li>
         </ol>
+    </div>
+    <div>
+        <section>表格</section>
+        <table border='1'>
+            <caption>前端三剑客</caption>
+            <thead>
+            <tr>
+                <th>知识点</th>
+                <th>重要程度</th>
+                <th>难度</th>
+                <th>学习周期</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>html</td>
+                <td>5星</td>
+                <td>3星</td>
+                <td>7天</td>
+            </tr>
+            <tr>
+                <td>css</td>
+                <td>5星</td>
+                <td>1星</td>
+                <td>10天</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>js</td>
+                <td>4星</td>
+                <td>2星</td>
+                <td>8天</td>
+            </tr>
+        </tfoot>
+        </table>
+    </div>
+    <div>
+        <form method='post' action='adc.php'>
+            <label for='username'>用户名：</label>
+            <input type='text' name='username' id='username' value='123' placeholder='请输入用户名称'/>
+            <br/>
+            <label for='password'>密码：</label>
+            <input type='password' name='password' id='password' value='123'/>
+            <br/>
+            <input type='submit' name='submit' id='submit' value='确定'/>
+            <input type='reset' name='reset' id='reset' value='重置'/>
+            <br/>
+            <input type='number' />
+            <br/>
+            <input type='url' />  
+            <br/>
+            <input type='email' />
+            <br />
+            <textarea rows='3' cols='15'>请输入文字</textarea>
+            <br/>
+            <br>
+            <label>男</label>
+            <input type='radio' name='单选框' id='single' value='1' checked='checked' />
+            <br />
+            <br/>
+            <label>爱好</label>
+            <input type='checkbox' name='多选框' id='check' value='跑步'/>跑步
+            <input type='checkbox' name='多选框' id='check' value='爬山'/>爬山
+            <br/>
+            <label style='color:red;font-size:30px'>下拉选项</label>
+            <select style='color:red;font-size:30px'>
+                <option style='color:red;font-size:30px' value='吃饭'>吃饭</option>
+                <option value='喝酒'>喝酒</option>
+                <option value='看电影' selected='selected'>看电影</option>
+            </select>
+
+        </form>
     </div>
     <footer>last</footer>
 </body>
